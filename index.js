@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const product = require("./api/product");
+const cross_selling_products = require("./api/crosssellingproducts");
 
 const app = express();
 app.use(cors());
@@ -25,15 +27,15 @@ const getCrossSellingProducts = () => {
 }
 
 // This function runs if the http://localhost:5000/getData endpoint is requested with a GET request
-app.get('/products', async (req, res) => {
-    const response = await getProducts();
-    console.log(res.json(response));
-});
+//  
 
 app.get('/CrossSellingProducts', async (req, res) => {
     const response = await getCrossSellingProducts();
     console.log(res.json(response));
 });
+
+app.use("/api/product", product);
+app.use("/api/crosssellingproducts", cross_selling_products);
 
 const port = process.env.PORT || 8000;
 
