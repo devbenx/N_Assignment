@@ -1,8 +1,11 @@
 {
   "name": "Nelson_Assigment",
   "version": "1.0.0",
-  "description": "",
+  "description": "Nelson Assignment",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
