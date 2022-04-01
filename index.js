@@ -35,6 +35,8 @@ app.get('/CrossSellingProducts', async (req, res) => {
     console.log(res.json(response));
 });
 
-app.listen(8000, () => {
-    console.log('Example app listening at http://localhost:8000');
-});
+const port = process.env.PORT || 8000;
+
+app.listen(port, () => console.log(`Server Running on port ${port}`));
+
+module.exports = app;
